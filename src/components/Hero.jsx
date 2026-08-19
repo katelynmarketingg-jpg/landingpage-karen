@@ -56,7 +56,7 @@ export default function Hero() {
         >
           <div className="flex flex-col gap-3">
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/5551990158118"
               target="_blank"
               rel="noopener noreferrer"
               className="group btn-primary"

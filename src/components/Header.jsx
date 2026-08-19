@@ -69,7 +69,7 @@ export default function Header() {
         {/* Actions */}
         <div className="flex items-center gap-3">
           <a
-            href="https://wa.me/5500000000000"
+            href="https://wa.me/5551990158118"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden sm:inline-flex items-center gap-2.5 bg-white hover:bg-[#ECECEC] text-ink font-sans font-semibold text-[9px] tracking-[0.28em] uppercase px-5 py-2.5 transition-all duration-300"
@@ -115,7 +115,7 @@ export default function Header() {
                 </motion.a>
               ))}
               <a
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5551990158118"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-5 flex items-center justify-center gap-2.5 bg-white text-ink font-sans font-semibold text-[9px] tracking-[0.28em] uppercase py-3.5"

@@ -136,7 +136,7 @@ export default function PracticeAreas() {
             Tem dúvidas sobre qual área se aplica ao seu caso?
           </p>
           <a
-            href="https://wa.me/5500000000000"
+            href="https://wa.me/5551990158118"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 bg-ink hover:bg-ink/90 text-white font-sans font-semibold text-[9px] tracking-[0.28em] uppercase px-10 py-4 transition-all duration-300"

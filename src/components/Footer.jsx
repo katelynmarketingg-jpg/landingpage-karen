@@ -83,7 +83,7 @@ export default function Footer() {
                 className="w-9 h-9 border border-white/10 hover:border-white/35 flex items-center justify-center text-white/25 hover:text-white/70 transition-all duration-300">
                 <IG />
               </a>
-              <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer"
+              <a href="https://wa.me/5551990158118" target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 border border-white/10 hover:border-white/35 flex items-center justify-center text-white/25 hover:text-white/70 transition-all duration-300">
                 <WA />
               </a>
@@ -95,7 +95,7 @@ export default function Footer() {
             <h4 className="label text-white/25 mb-6">Contato</h4>
             <ul className="space-y-4">
               {[
-                { label: 'WhatsApp', val: '(00) 00000-0000', href: 'https://wa.me/5500000000000' },
+                { label: 'WhatsApp', val: '(00) 00000-0000', href: 'https://wa.me/5551990158118' },
                 { label: 'E-mail', val: 'contato@karennascimento.adv.br', href: 'mailto:contato@karennascimento.adv.br' },
                 { label: 'OAB', val: 'OAB/XX 000.000' },
                 { label: 'Endereço', val: 'Rua Exemplo, 000 — Cidade/UF' },

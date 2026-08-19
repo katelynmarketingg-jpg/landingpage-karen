@@ -83,7 +83,7 @@ export default function AboutKaren() {
 
             <motion.div {...rev(0.55)}>
               <a
-                href="https://wa.me/5500000000000"
+                href="https://wa.me/5551990158118"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex"
