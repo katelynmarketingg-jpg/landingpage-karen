@@ -1,5 +1,22 @@
 import { motion } from 'framer-motion'
 
+const advogadas = [
+  {
+    img: '/images/equipe-karen.jpg',
+    name: 'Dra. Karen do Nascimento',
+    role: 'Fundadora · Advogada Criminal',
+    bio: 'Fundadora do escritório. Mais de 20 anos de experiência com presença estratégica, técnica e comprometimento em cada caso.',
+    featured: true,
+  },
+  {
+    img: '/images/equipe-nathalia.jpg',
+    name: 'Dra. Nathália Rosa',
+    role: 'Advogada Criminal',
+    bio: 'Atuação focada em consultoria preventiva e defesa criminal, com atenção às particularidades de cada caso e ao cliente.',
+    featured: false,
+  },
+]
+
 export default function Team() {
   return (
     <section id="equipe" className="bg-[#F4F4F4] py-24 lg:py-32 overflow-hidden">
@@ -46,95 +63,48 @@ export default function Team() {
           </div>
         </div>
 
-        {/* ── Foto panorâmica horizontal ── */}
+        {/* ── Duas advogadas lado a lado ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-7"
         >
-          <div className="relative w-full overflow-hidden bg-ink-mid" style={{ aspectRatio: '16/7' }}>
+          {advogadas.map((m, i) => (
+            <div key={i} className="flex flex-col">
 
-            {/*
-              Arquivo: /images/equipe.jpg
-              Ordem: Hemellyn (esq) · Karen (centro) · Nathália (dir)
-              object-top corta da cabeça para baixo — face acima, nomes abaixo
-            */}
-            <img
-              src="/images/equipe.jpg"
-              alt="Equipe Karen do Nascimento — Hemellyn Algayer, Karen do Nascimento e Nathália Rosa"
-              className="absolute inset-0 w-full h-full object-cover"
-              style={{ objectPosition: '40% 55%' }}
-              onError={(e) => { e.target.style.display = 'none' }}
-            />
+              {/* Foto com nome sobreposto */}
+              <div className="relative w-full overflow-hidden bg-ink-mid" style={{ aspectRatio: '3/4' }}>
+                <img
+                  src={m.img}
+                  alt={`${m.name} — ${m.role}`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  style={{ objectPosition: '50% 22%' }}
+                  onError={(e) => { e.target.style.display = 'none' }}
+                />
 
-            {/* Gradiente nas laterais */}
-            <div className="absolute inset-y-0 left-0 w-[6%] bg-gradient-to-r from-paper to-transparent" />
-            <div className="absolute inset-y-0 right-0 w-[6%] bg-gradient-to-l from-paper to-transparent" />
+                {/* Gradiente no rodapé para o nome */}
+                <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-ink to-transparent" />
 
-            {/* Gradiente no rodapé para os nomes */}
-            <div className="absolute bottom-0 left-0 right-0 h-[50%] bg-gradient-to-t from-ink to-transparent" />
-
-            {/* Nomes sobrepostos ao rodapé da foto */}
-            <div className="absolute bottom-0 left-0 right-0 px-6 lg:px-10 pb-6 lg:pb-7">
-              <div className="grid grid-cols-3">
-
-                {/* Hemellyn — esquerda */}
-                <div className="text-left">
-                  <span className="block w-5 h-px bg-white/40 mb-2.5" />
-                  <p className="font-sans font-medium text-white text-[clamp(0.65rem,1.4vw,0.9rem)] leading-tight mb-1">
-                    Dra. Hemellyn Algayer
+                {/* Nome + cargo */}
+                <div className="absolute bottom-0 left-0 right-0 px-6 lg:px-7 pb-5 lg:pb-6">
+                  <span className={`block w-6 h-px mb-3 ${m.featured ? 'bg-white/60' : 'bg-white/45'}`} />
+                  <p className="font-sans font-bold text-white text-[clamp(0.95rem,1.6vw,1.15rem)] leading-tight mb-1.5">
+                    {m.name}
                   </p>
-                  <p className="label text-white/35 text-[7px]">Advogada Criminal</p>
-                </div>
-
-                {/* Karen — centro */}
-                <div className="text-center">
-                  <span className="block w-5 h-px bg-white/60 mx-auto mb-2.5" />
-                  <p className="font-sans font-bold text-white text-[clamp(0.7rem,1.6vw,1rem)] leading-tight mb-1">
-                    Dra. Karen do Nascimento
-                  </p>
-                  <p className="label text-white/50 text-[7px]">Fundadora · Advogada Criminal</p>
-                </div>
-
-                {/* Nathália — direita */}
-                <div className="text-right">
-                  <span className="block w-5 h-px bg-white/40 mb-2.5 ml-auto" />
-                  <p className="font-sans font-medium text-white text-[clamp(0.65rem,1.4vw,0.9rem)] leading-tight mb-1">
-                    Dra. Nathália Rosa
-                  </p>
-                  <p className="label text-white/35 text-[7px]">Advogada Criminal</p>
+                  <p className="label text-white/50 text-[8px]">{m.role}</p>
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* Bios — faixa escura colada à foto */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/5 bg-ink">
-            {[
-              {
-                bio: 'Especialista em acompanhamento processual e atuação em audiências, com abordagem estratégica e presença efetiva em cada fase.',
-                featured: false,
-              },
-              {
-                bio: 'Fundadora do escritório. Mais de 20 anos de experiência com presença estratégica, técnica e comprometimento em cada caso.',
-                featured: true,
-              },
-              {
-                bio: 'Atuação focada em consultoria preventiva e defesa criminal, com atenção às particularidades de cada caso e ao cliente.',
-                featured: false,
-              },
-            ].map((m, i) => (
-              <div
-                key={i}
-                className="px-6 lg:px-8 py-5 bg-ink"
-              >
-                <p className={`font-sans font-light text-[0.85rem] leading-[1.85] ${m.featured ? 'text-white/60' : 'text-white/30'}`}>
+              {/* Bio — faixa escura colada à foto */}
+              <div className="bg-ink px-6 lg:px-8 py-6 flex-1">
+                <p className={`font-sans font-light text-[0.9rem] leading-[1.85] ${m.featured ? 'text-white/60' : 'text-white/40'}`}>
                   {m.bio}
                 </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </motion.div>
 
       </div>
