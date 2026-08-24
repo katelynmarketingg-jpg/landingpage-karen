@@ -91,7 +91,7 @@ export default function CTASection() {
           className="flex flex-col sm:flex-row items-start gap-4"
         >
           <a
-            href="https://wa.me/5500000000000"
+            href="https://wa.me/5551990158118"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"
