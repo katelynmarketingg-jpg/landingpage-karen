@@ -5,15 +5,24 @@ const advogadas = [
     img: '/images/equipe-karen.jpg',
     name: 'Dra. Karen do Nascimento',
     role: 'Fundadora · Advogada Criminal',
-    bio: 'Fundadora do escritório. Mais de 20 anos de experiência com presença estratégica, técnica e comprometimento em cada caso.',
     featured: true,
+    bio: [
+      'Graduada em Direito pela Universidade de Caxias do Sul (UCS), Karen do Nascimento atua na advocacia criminal há mais de 20 anos, construindo uma trajetória marcada pela experiência prática, pelo comprometimento e pela defesa firme e responsável dos interesses de seus clientes.',
+      'À frente do Karen do Nascimento Advocacia Criminal, consolidou sua atuação a partir de uma presença próxima e estratégica em todas as etapas da defesa. Do primeiro acolhimento e orientação à atuação em delegacias, audiências, plenários do Tribunal do Júri e sustentações perante os tribunais, acompanha cada caso com profundidade, técnica e atenção às particularidades de cada história.',
+      'Ao longo de sua trajetória, compreendeu que atuar no Direito Criminal exige mais do que conhecimento jurídico. Exige responsabilidade diante das decisões que podem transformar vidas, preparo para enfrentar situações complexas e coragem para defender direitos quando eles mais precisam ser preservados.',
+      'Sua atuação traduz aquilo em que acredita e que orienta o trabalho de todo o escritório: uma advocacia ética, responsável, aguerrida e, acima de tudo, humana.',
+    ],
   },
   {
     img: '/images/equipe-nathalia.jpg',
     name: 'Dra. Nathália Rosa',
     role: 'Advogada Criminal',
-    bio: 'Atuação focada em consultoria preventiva e defesa criminal, com atenção às particularidades de cada caso e ao cliente.',
     featured: false,
+    bio: [
+      'Graduada em Direito pela ULBRA Torres em 2024, constrói sua trajetória na área jurídica desde 2016, reunindo experiências em escritório de advocacia, Fórum e Defensoria Pública. Atuou por quatro anos nas áreas Criminal e da Infância e Juventude, desenvolvendo uma visão ampla e humanizada da prática jurídica.',
+      'Integra o KN Advocacia Criminal desde 2021, onde iniciou como estagiária e, após a graduação, passou a atuar como advogada ao lado da Dra. Karen, com atuação nas áreas Criminal, Cível e de Família.',
+      'Sua trajetória é pautada pela dedicação, responsabilidade e constante aperfeiçoamento, buscando oferecer uma advocacia próxima, comprometida e atenta às necessidades de cada cliente.',
+    ],
   },
 ]
 
@@ -64,23 +73,23 @@ export default function Team() {
         </div>
 
         {/* ── Duas advogadas lado a lado ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-7"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 items-start">
           {advogadas.map((m, i) => (
-            <div key={i} className="flex flex-col">
-
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.9, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="flex flex-col"
+            >
               {/* Foto com nome sobreposto */}
-              <div className="relative w-full overflow-hidden bg-ink-mid" style={{ aspectRatio: '3/4' }}>
+              <div className="relative w-full overflow-hidden bg-ink-mid" style={{ aspectRatio: '4/5' }}>
                 <img
                   src={m.img}
                   alt={`${m.name} — ${m.role}`}
                   className="absolute inset-0 w-full h-full object-cover"
-                  style={{ objectPosition: '50% 22%' }}
+                  style={{ objectPosition: '50% 20%' }}
                   onError={(e) => { e.target.style.display = 'none' }}
                 />
 
@@ -88,24 +97,29 @@ export default function Team() {
                 <div className="absolute bottom-0 left-0 right-0 h-[45%] bg-gradient-to-t from-ink to-transparent" />
 
                 {/* Nome + cargo */}
-                <div className="absolute bottom-0 left-0 right-0 px-6 lg:px-7 pb-5 lg:pb-6">
+                <div className="absolute bottom-0 left-0 right-0 px-6 lg:px-8 pb-6 lg:pb-7">
                   <span className={`block w-6 h-px mb-3 ${m.featured ? 'bg-white/60' : 'bg-white/45'}`} />
-                  <p className="font-sans font-bold text-white text-[clamp(0.95rem,1.6vw,1.15rem)] leading-tight mb-1.5">
+                  <p className="font-sans font-bold text-white text-[clamp(1rem,1.8vw,1.25rem)] leading-tight mb-1.5">
                     {m.name}
                   </p>
                   <p className="label text-white/50 text-[8px]">{m.role}</p>
                 </div>
               </div>
 
-              {/* Bio — faixa escura colada à foto */}
-              <div className="bg-ink px-6 lg:px-8 py-6 flex-1">
-                <p className={`font-sans font-light text-[0.9rem] leading-[1.85] ${m.featured ? 'text-white/60' : 'text-white/40'}`}>
-                  {m.bio}
-                </p>
+              {/* Bio completa — faixa escura colada à foto */}
+              <div className="bg-ink px-6 lg:px-8 py-8 lg:py-9 flex-1 space-y-4">
+                {m.bio.map((p, j) => (
+                  <p
+                    key={j}
+                    className={`font-sans font-light text-[0.9rem] leading-[1.85] ${m.featured ? 'text-white/55' : 'text-white/50'}`}
+                  >
+                    {p}
+                  </p>
+                ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
 
       </div>
     </section>
