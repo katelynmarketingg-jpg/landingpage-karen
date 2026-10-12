@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 
 export default function CTASection() {
   return (
-    <section className="relative min-h-[78vh] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-svh lg:min-h-[78vh] flex items-center justify-center overflow-hidden">
 
       {/* ── FOTO DE FUNDO CTA ──
           Arquivo: /images/karen-editorial.jpg
@@ -23,7 +23,7 @@ export default function CTASection() {
       <div className="absolute inset-0 bg-ink-mid -z-10" />
 
       {/* Heavy dark overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/65 to-ink/50" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/80 to-ink/65" />
       <div className="absolute inset-0 bg-gradient-to-r from-ink/70 via-transparent to-ink/70" />
 
       {/* Corner marks */}
@@ -91,7 +91,7 @@ export default function CTASection() {
           className="flex flex-col sm:flex-row items-start gap-4"
         >
           <a
-            href="https://wa.me/5551990158118"
+            href="https://wa.me/5551981795598"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary"

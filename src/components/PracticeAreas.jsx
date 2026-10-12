@@ -88,7 +88,7 @@ export default function PracticeAreas() {
         </div>
 
         {/* Grid 3×2 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 border-t border-l border-ink/8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 border-t border-l border-ink/8">
           {areas.map((area, i) => (
             <motion.div
               key={area.title}
@@ -96,25 +96,25 @@ export default function PracticeAreas() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-30px' }}
               transition={{ duration: 0.6, delay: i * 0.06 }}
-              className="group border-b border-r border-ink/8 p-8 lg:p-9 flex flex-col gap-5 hover:bg-[#ECECEC] transition-colors duration-300 cursor-default"
+              className="group border-b border-r border-ink/8 p-5 sm:p-7 lg:p-9 flex flex-col gap-3.5 sm:gap-5 hover:bg-[#ECECEC] transition-colors duration-300 cursor-default"
             >
               {/* Icon */}
-              <div className="w-10 h-10 border border-ink/15 group-hover:border-ink/40 flex items-center justify-center text-ink/35 group-hover:text-ink/70 transition-all duration-300">
+              <div className="w-8 h-8 sm:w-10 sm:h-10 border border-ink/15 group-hover:border-ink/40 flex items-center justify-center text-ink/35 group-hover:text-ink/70 transition-all duration-300">
                 {area.icon}
               </div>
 
               {/* Text */}
               <div className="flex flex-col gap-3 flex-1">
-                <h3 className="font-sans font-bold text-ink/80 text-[1rem] leading-snug tracking-wide group-hover:text-ink transition-colors duration-300">
+                <h3 className="font-sans font-bold text-ink/80 text-[0.82rem] sm:text-[0.95rem] lg:text-[1rem] leading-snug tracking-wide group-hover:text-ink transition-colors duration-300">
                   {area.title}
                 </h3>
-                <p className="font-sans font-light text-stone text-[0.86rem] leading-[1.85]">
+                <p className="font-sans font-light text-stone text-[0.73rem] leading-[1.7] sm:text-[0.8rem] sm:leading-[1.8] lg:text-[0.86rem] lg:leading-[1.85]">
                   {area.desc}
                 </p>
               </div>
 
               {/* Arrow */}
-              <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pt-1">
+              <div className="hidden sm:flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pt-1">
                 <span className="w-4 h-px bg-ink/40" />
                 <svg className="w-3 h-3 text-ink/40" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -136,7 +136,7 @@ export default function PracticeAreas() {
             Tem dúvidas sobre qual área se aplica ao seu caso?
           </p>
           <a
-            href="https://wa.me/5551990158118"
+            href="https://wa.me/5551981795598"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 bg-ink hover:bg-ink/90 text-white font-sans font-semibold text-[9px] tracking-[0.28em] uppercase px-10 py-4 transition-all duration-300"

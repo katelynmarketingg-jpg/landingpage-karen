@@ -22,7 +22,7 @@ export default function Hero() {
           className="flex items-center gap-3 mb-8"
         >
           <span className="w-8 h-px bg-white/30 flex-shrink-0" />
-          <span className="label text-white/35">Karen do Nascimento Advocacia Criminal · OAB/XX 000.000</span>
+          <span className="label text-white/35">Karen do Nascimento Advocacia Criminal</span>
         </motion.div>
 
         {/* Main heading — bold italic */}
@@ -56,7 +56,7 @@ export default function Hero() {
         >
           <div className="flex flex-col gap-3">
             <a
-              href="https://wa.me/5551990158118"
+              href="https://wa.me/5551981795598"
               target="_blank"
               rel="noopener noreferrer"
               className="group btn-primary"

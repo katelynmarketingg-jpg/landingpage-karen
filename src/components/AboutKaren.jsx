@@ -11,17 +11,36 @@ export default function AboutKaren() {
   return (
     <section className="bg-ink overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-14 py-24 lg:py-36">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        {/* Mobile: título → foto → texto.  Desktop: foto à esquerda, título + texto à direita. */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-x-24 lg:gap-y-0 lg:items-center">
 
-          {/* ── Left: Photo ── */}
+          {/* ── 1. Título ── */}
+          <div className="lg:col-start-2 lg:row-start-1">
+            <motion.div {...rev(0)} className="flex items-center gap-3 mb-8">
+              <span className="w-8 h-px bg-white/20 flex-shrink-0" />
+              <span className="label text-white/35">Sobre Karen</span>
+            </motion.div>
+
+            {/* Italic accent + bold heading */}
+            <motion.div {...rev(0.1)}>
+              <p className="font-sans italic font-light text-white/40 text-[1.8rem] leading-tight -ml-0.5">
+                uma trajetória de
+              </p>
+              <h2 className="font-display font-black text-[clamp(1.8rem,3.8vw,2.8rem)] leading-[1.0] tracking-tight text-white">
+                prática, técnica<br />e responsabilidade.
+              </h2>
+            </motion.div>
+          </div>
+
+          {/* ── 2. Foto ── */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="relative order-2 lg:order-1"
+            className="relative lg:col-start-1 lg:row-start-1 lg:row-span-2"
           >
-            <div className="relative aspect-[3/4] overflow-hidden bg-ink-mid">
+            <div className="relative aspect-[3/4] overflow-hidden bg-ink-mid max-w-[230px] mx-auto lg:max-w-none">
               {/* Arquivo: /images/karen-desk.jpg */}
               <img
                 src="/images/karen-desk.jpg"
@@ -33,32 +52,17 @@ export default function AboutKaren() {
               <div className="absolute inset-0 bg-gradient-to-t from-ink/60 via-transparent to-transparent" />
 
               {/* Caption */}
-              <div className="absolute bottom-0 left-0 right-0 px-6 py-5">
-                <span className="block font-sans font-semibold text-white text-[0.85rem] tracking-wide">Dra. Karen do Nascimento</span>
-                <span className="block font-sans font-light text-white/40 text-[8px] tracking-[0.28em] uppercase mt-1">Advogada Criminal · Fundadora</span>
+              <div className="absolute bottom-0 left-0 right-0 px-4 py-3 lg:px-6 lg:py-5">
+                <span className="block font-sans font-semibold text-white text-[0.7rem] lg:text-[0.85rem] tracking-wide">Dra. Karen do Nascimento</span>
+                <span className="block font-sans font-light text-white/40 text-[7px] lg:text-[8px] tracking-[0.22em] lg:tracking-[0.28em] uppercase mt-1">Advogada Criminal · Fundadora</span>
               </div>
             </div>
 
           </motion.div>
 
-          {/* ── Right: Text ── */}
-          <div className="order-1 lg:order-2">
-            <motion.div {...rev(0)} className="flex items-center gap-3 mb-8">
-              <span className="w-8 h-px bg-white/20 flex-shrink-0" />
-              <span className="label text-white/35">Sobre Karen</span>
-            </motion.div>
-
-            {/* Italic accent + bold heading */}
-            <motion.div {...rev(0.1)} className="mb-8">
-              <p className="font-sans italic font-light text-white/40 text-[1.8rem] leading-tight -ml-0.5">
-                uma trajetória de
-              </p>
-              <h2 className="font-display font-black text-[clamp(1.8rem,3.8vw,2.8rem)] leading-[1.0] tracking-tight text-white">
-                prática, técnica<br />e responsabilidade.
-              </h2>
-            </motion.div>
-
-            <motion.div {...rev(0.2)} className="w-10 h-px bg-white/15 mb-8" />
+          {/* ── 3. Texto ── */}
+          <div className="lg:col-start-2 lg:row-start-2">
+            <motion.div {...rev(0.2)} className="w-10 h-px bg-white/15 mb-8 lg:mt-8" />
 
             <motion.p {...rev(0.25)} className="font-sans font-light text-white/50 text-[0.95rem] leading-[1.9] mb-5">
               Para alguns, a advocacia criminal é sinônimo somente de força e implacabilidade. Para mim, vai além: é sobre uma vida, prestes a perder um dos bens mais preciosos que existe — a liberdade.
@@ -83,7 +87,7 @@ export default function AboutKaren() {
 
             <motion.div {...rev(0.55)}>
               <a
-                href="https://wa.me/5551990158118"
+                href="https://wa.me/5551981795598"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary inline-flex"

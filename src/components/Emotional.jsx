@@ -44,7 +44,7 @@ export default function Emotional() {
           </p>
 
           <a
-            href="https://wa.me/5551990158118"
+            href="https://wa.me/5551981795598"
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary inline-flex"
