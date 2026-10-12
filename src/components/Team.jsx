@@ -62,7 +62,7 @@ export default function Team() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              href="https://wa.me/5551990158118"
+              href="https://wa.me/5551981795598"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-ghost-dark self-start lg:self-auto flex-shrink-0"

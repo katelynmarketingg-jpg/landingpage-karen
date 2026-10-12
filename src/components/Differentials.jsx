@@ -41,7 +41,7 @@ export default function Differentials() {
         </div>
 
         {/* Items list */}
-        <div className="space-y-px">
+        <div className="grid grid-cols-2 gap-x-5 lg:block lg:space-y-px">
           {items.map((item, i) => (
             <motion.div
               key={item.num}
@@ -49,25 +49,25 @@ export default function Differentials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.6, delay: i * 0.08 }}
-              className="group grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-4 lg:gap-10 items-start bg-[#F4F4F4] hover:bg-[#ECECEC] transition-colors duration-300 py-8 border-t border-ink/8 cursor-default"
+              className="group grid grid-cols-1 lg:grid-cols-[80px_1fr_1fr] gap-2 lg:gap-10 items-start bg-[#F4F4F4] hover:bg-[#ECECEC] transition-colors duration-300 py-6 lg:py-8 border-t border-ink/8 cursor-default"
             >
               {/* Number */}
-              <span className="font-display font-black text-[2.2rem] text-ink/15 group-hover:text-ink/25 transition-colors duration-300 leading-none">
+              <span className="font-display font-black text-[1.6rem] lg:text-[2.2rem] text-ink/15 group-hover:text-ink/25 transition-colors duration-300 leading-none">
                 {item.num}
               </span>
 
               {/* Title */}
-              <h3 className="font-sans font-bold text-ink/70 text-[1.05rem] tracking-wide pt-1 group-hover:text-ink transition-colors duration-300">
+              <h3 className="font-sans font-bold text-ink/70 text-[0.9rem] lg:text-[1.05rem] tracking-wide pt-1 group-hover:text-ink transition-colors duration-300">
                 {item.title}
               </h3>
 
               {/* Desc */}
-              <p className="font-sans font-light text-stone text-[0.88rem] leading-[1.85]">
+              <p className="font-sans font-light text-stone text-[0.75rem] leading-[1.7] lg:text-[0.88rem] lg:leading-[1.85]">
                 {item.desc}
               </p>
             </motion.div>
           ))}
-          <div className="border-t border-ink/8" />
+          <div className="border-t border-ink/8 col-span-2 lg:col-span-1" />
         </div>
       </div>
     </section>
